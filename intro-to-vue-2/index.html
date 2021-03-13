@@ -2,17 +2,45 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Intro to Vue 2</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header class="nav-bar"></header>
     <div id="app">
-      <h1>{{product}}</h1>
+      <div class="product">
+        <div class="product-image">
+          <img v-bind:src="image" />
+        </div>
+        <div class="product-info">
+          <h1>{{ product }}</h1>
+          <p v-show="inStock">In Stock</p>
+          <p v-show="onSale">On Sale!</p>
+          <!-- <p v-if="inventory > 10">In Stock</p>
+          <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
+          <p v-else>Out of Stock</p> -->
+
+          <ul class="product-details">
+            <li v-for="detail in details">{{detail}}</li>
+          </ul>
+
+          <div
+            class="variant-color"
+            v-for="variant in variants"
+            :key="variant.variantId"
+          >
+            <p>{{variant.variantColor}}</p>
+          </div>
+
+          <ul class="size-list">
+            <li v-for="size in sizes">{{size}}</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
