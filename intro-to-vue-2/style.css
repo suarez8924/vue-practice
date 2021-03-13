@@ -56,10 +56,43 @@ h1 {
   margin: 1rem 2.5rem;
 }
 
-.variant-color:not(:last-of-type) {
-  margin-bottom: 1rem;
+.color-box {
+  width: 4rem;
+  height: 4rem;
 }
 
+.color-box:not(:first-of-type) {
+  margin-top: 1rem;
+}
 .size-list {
   margin-top: 1rem;
+}
+
+.button {
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-out;
+  cursor: pointer;
+}
+
+.button.add {
+  background-color: lightgreen;
+}
+.button.remove {
+  background-color: lightcoral;
+}
+
+.button:hover {
+  background-color: lightsalmon;
+}
+
+.button.disabled {
+  background-color: antiquewhite;
+}
+
+.outOfStock {
+  text-decoration: line-through;
 }
